@@ -2,7 +2,11 @@
 putenv("GOOGLE_APPLICATION_CREDENTIALS=my-first-project.json");
 require __DIR__ . '/vendor/autoload.php';
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
-
+if(!empty($_FILES)){
+    print("das");
+    }else{
+      $MSG = '画像を選択してください';
+    }   
 //filenameの受け渡しができていなく画像がないといわれている
 $filename = isset($_FILES["upload_image"]["name"]) ? $_FILES["upload_image"]["name"] : "";
 echo $filename;
