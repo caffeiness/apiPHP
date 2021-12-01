@@ -7,7 +7,7 @@ use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Google\Cloud\Vision\V1\Likelihood;
 
 print_r($_FILES['upload_image']['name']);
-$imagePath = "02 CHARACTER1.jpg"; 
+$imagePath = $_FILES['upload_image']['name']; 
 $imageAnnotator = new ImageAnnotatorClient(); 
 $image = file_get_contents($imagePath); 
 $response = $imageAnnotator->textDetection($image); 
