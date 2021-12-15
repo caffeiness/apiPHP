@@ -22,8 +22,8 @@ $channel_secret = $json["channel_secret"];
  * under the License.
  */
 require_once('LINEBotTiny.php');
-$channelAccessToken = $channel_access_token ;
-$channelSecret = $channel_secret;
+$channelAccessToken = "eSHZz1GERNKm+XPvRfd15iY/0w8qSUofgH2jc319Rjn5A/Umsk8iZNxUr/X/Sg0by7SlAIcPKXP9v7c6ykb52kY8GTB4ItOLk6GrU2fXu+q95Dd2GdurZEhmDH5viL/DvE6ePrb83K5AyHYqLF/gLgdB04t89/1O/w1cDnyilFU=" ;
+$channelSecret = "39e9652b9607488eac0d2fbb1de588a7";
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
