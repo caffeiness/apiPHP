@@ -1,7 +1,11 @@
 <?php
 require('vendor/autoload.php');
-$channel_access_token = 'eSHZz1GERNKm+XPvRfd15iY/0w8qSUofgH2jc319Rjn5A/Umsk8iZNxUr/X/Sg0by7SlAIcPKXP9v7c6ykb52kY8GTB4ItOLk6GrU2fXu+q95Dd2GdurZEhmDH5viL/DvE6ePrb83K5AyHYqLF/gLgdB04t89/1O/w1cDnyilFU=';
-$channel_secret = '39e9652b9607488eac0d2fbb1de588a7';
+$json = file_get_contents('twitterAccount.json');
+$json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+$json = json_decode($json,true);
+
+$channel_access_token = $json["channel_access_token"];
+$channel_secret = $json["channel_secret"];
 
 require_once('tick.php');
 
