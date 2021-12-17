@@ -9,9 +9,9 @@ use Google\Cloud\Vision\V1\Likelihood;
 print_r($_FILES['upload_image']['name']);
 echo "<br />";
 $imagePath = $_FILES['upload_image']['name']; 
-move_uploaded_file($_FILES["upload_image"]["tmp_name"],"./images/".$imagePath);
+move_uploaded_file($_FILES["upload_image"]["tmp_name"],"./tmp/".$imagePath);
 $imageAnnotator = new ImageAnnotatorClient(); 
-$image = file_get_contents("./images/".$imagePath); 
+$image = file_get_contents("./tmp/".$imagePath); 
 $response = $imageAnnotator->textDetection($image); 
 $texts = $response->getTextAnnotations(); 
 foreach ($texts as $text) {
