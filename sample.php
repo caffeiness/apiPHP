@@ -2,9 +2,9 @@
 putenv("GOOGLE_APPLICATION_CREDENTIALS=my-first-project.json");
 require __DIR__ . '/vendor/autoload.php';
 
-use Google\Cloud\Vision\V1\Feature\Type;
+//use Google\Cloud\Vision\V1\Feature\Type;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
-use Google\Cloud\Vision\V1\Likelihood;
+//use Google\Cloud\Vision\V1\Likelihood;
 
 ini_set('display_errors', 0);
 print_r($_FILES['upload_image']['name']);
@@ -29,7 +29,7 @@ foreach ($texts as $text) {
  $result = str_replace(array("\r\n","\r","\n"), '', $result);
  $resultArr[] = $result;
 } 
-var_dump($resultArr);
+//var_dump($resultArr);
 //返り値が結構バラバラなので文字数が多い順に並び替え 
 array_multisort( array_map( "strlen", $resultArr ), SORT_DESC, $resultArr ) ; 
 //var_dump($resultArr);
@@ -44,6 +44,7 @@ $imageAnnotator->close();
 
 </head>
   <body>
+  <div class="bg_test">
     <div class="glass-container" id="glass">
       <?php echo $resultArr[0] ?>
     </div>
@@ -51,5 +52,6 @@ $imageAnnotator->close();
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"  data-size="large" data-show-count="false">Tweet</a>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
+  </div>
   </body>
 </html>
