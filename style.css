@@ -59,6 +59,13 @@ input {
   width: 100%;
   height: 775px;
 }
+.twitter{
+  position:absolute;
+  bottom: 50px;;
+  left:50%;
+  transform:translateX(-50%);
+}
+
 body{
   background-color: rgb(31, 218, 231);
 }

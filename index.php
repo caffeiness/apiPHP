@@ -10,7 +10,7 @@
 <body>
 <div class="bg_test">
 <div class="glass-container" id="glass">
-    <form action="sample.php" method="post" enctype="multipart/form-data">
+    <form action="image2text.php" method="post" enctype="multipart/form-data">
         <div class="file_button">
             <p><span>ファイルを選択</span><input class="file_input" type="file" name="upload_image"></p>
         </div>
